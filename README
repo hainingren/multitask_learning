@@ -1,0 +1,9 @@
+Backbone model is dstilbert. We use transformers to import it into pytorch. 
+The multitask_model overlays 2 simple heads on top of the backbone. 
+For classification tasks, we have 2 options of using either the mean pooling
+or the CLS token. Note that since BERT embeddings have semantic meaning, but are
+not trained contrastively. They are good for classification but not for similarity. 
+
+Note when using the CLS token, given its summary nature, we need not worry about masks.
+However, when dealing with mean pooling, we need to manage padding.
+
